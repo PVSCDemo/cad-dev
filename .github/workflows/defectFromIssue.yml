@@ -1,10 +1,8 @@
 name: Defect Creation in LK
-
 on:
   issues:
     types:
     - opened
-  
 jobs:
   create-defect:
     environment: NACL
