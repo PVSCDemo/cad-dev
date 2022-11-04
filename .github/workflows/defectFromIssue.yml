@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: create defect
-        uses: PVSCDemo/github-actions-dev/createCard@v0.4
+        uses: PVSCDemo/github-actions/createCard@v1.1.2
         with:
           host: ${{secrets.LEANKIT_URL}}
           apiToken: ${{secrets.LEANKIT_API}}
