@@ -1,0 +1,25 @@
+name: Defect Creation in LK
+
+on:
+  issues:
+    types:
+    - opened
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  create-defect:
+    environment: Team Charlie
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: create defect
+        uses: PVSCDemo/github-actions-dev/createCard@v0.1
+        with:
+          host: ${{secrets.LEANKIT_URL}}
+          apiToken: ${{secrets.LEANKIT_API}}
+          boardId: ${{secrets.BOARD_ID}}
+          title: ${{github.event.issue.title}}
+          customId: GitHub Issue #${{github.event.issue.number}}
+          externalLink: ${{github.event.issue.html_url}}
+          typeId: ${{secrets.DEFECT_TYPE}}
