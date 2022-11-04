@@ -16,6 +16,6 @@ jobs:
           apiToken: ${{secrets.LEANKIT_API}}
           boardId: ${{secrets.BOARD_ID}}
           title: ${{github.event.issue.title}}
-          customId: GitHub Issue: ${{github.event.issue.number}}
+          customId: GitHub Issue ${{github.event.issue.number}}
           externalLink: ${{github.event.issue.html_url}}
           typeId: ${{secrets.DEFECT_TYPE}}
